@@ -1,0 +1,10 @@
+steps:
+  - task: NodeTool@0
+    displayName: "Use Node version v18.12.1"
+    inputs:
+      versionSpec: 18.12.1
+
+  - script: |
+      npm i
+    displayName: "NPM: Install dependencies"
+    enabled: true

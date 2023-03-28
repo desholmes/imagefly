@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "requireConfigFile": false,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      2,
+      {
+        "printWidth": 100,
+        "singleQuote": false,
+        "trailingComma": "none",
+        "tabWidth": 2,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "PLAI.postman_collection.json"
+  ]
+}

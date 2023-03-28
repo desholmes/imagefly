@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_EXTENSION_VERSION": "~3",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "NODE_ENV": "development",
+    "ORIGIN": "https://dholmes.co.uk/img",
+    "AzureWebJobs.v1HeathCheck.Disabled": false,
+    "AzureWebJobs.v1Image.Disabled": false
+  }
+}

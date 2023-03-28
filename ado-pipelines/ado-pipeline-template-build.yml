@@ -1,0 +1,40 @@
+steps:
+  - script: |
+      npm run build
+    displayName: "NPM: Build"
+    enabled: true
+
+  - script: |
+      rm -rf node_modules
+      npm i --production
+    displayName: "NPM: install production dependencies"
+    enabled: true
+
+  - task: CopyFiles@2
+    displayName: "Copy Files: $(Build.ArtifactStagingDirectory)"
+    inputs:
+      contents: |
+        $(System.DefaultWorkingDirectory)/dist/**
+        $(System.DefaultWorkingDirectory)/node_modules/**
+        $(System.DefaultWorkingDirectory)/v1image/function.json
+        $(System.DefaultWorkingDirectory)/v1HeathCheck/function.json
+        $(System.DefaultWorkingDirectory)/host.json
+        $(System.DefaultWorkingDirectory)/package.json
+      targetFolder: "$(Build.ArtifactStagingDirectory)"
+      verbose: false
+    enabled: true
+
+  - task: ArchiveFiles@2
+    displayName: "Create build zip"
+    inputs:
+      rootFolderOrFile: "$(Build.ArtifactStagingDirectory)"
+      includeRootFolder: false
+      verbose: false
+    enabled: true
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish build zip artifact: drop"
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      artifactName: drop
+    enabled: true

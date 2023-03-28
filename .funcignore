@@ -1,0 +1,11 @@
+*.js.map
+*.ts
+.git*
+.azuredevops
+.vscode
+.eslint
+.prettierrc
+local.settings.json
+tsconfig.json
+README.md
+docs

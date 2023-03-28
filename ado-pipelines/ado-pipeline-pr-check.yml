@@ -1,0 +1,18 @@
+name: IMAGE-FLY-PR-$(BuildID)
+
+trigger:
+  branches:
+    include:
+      - main
+      - feature/*
+      - bugfix/*
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - template: ado-pipeline-template-npm.yml
+
+  - template: ado-pipeline-template-qa.yml
+
+  - template: ado-pipeline-template-build.yml

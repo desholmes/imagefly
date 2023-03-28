@@ -1,0 +1,10 @@
+steps:
+  - script: |
+        npm run audit
+    displayName: "NPM: Audit (critical)"
+    enabled: true
+
+  - script: |
+      npm run lint
+    displayName: "Tests: Lint"
+    enabled: true

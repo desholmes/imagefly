@@ -1,0 +1,20 @@
+{
+    "azureFunctions.deploySubpath": ".",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "TypeScript",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "npm prune (functions)",
+    "cSpell.words": [
+        "blurhash",
+        "davinci",
+        "deduped",
+        "desholmes",
+        "dholmes",
+        "EICR",
+        "openai",
+        "PLAPV",
+        "Shorthold",
+        "webp"
+    ]
+}
