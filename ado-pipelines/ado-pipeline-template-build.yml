@@ -18,6 +18,7 @@ steps:
         $(System.DefaultWorkingDirectory)/node_modules/**
         $(System.DefaultWorkingDirectory)/v1image/function.json
         $(System.DefaultWorkingDirectory)/v1HeathCheck/function.json
+        $(System.DefaultWorkingDirectory)/v1Image/function.json
         $(System.DefaultWorkingDirectory)/host.json
         $(System.DefaultWorkingDirectory)/package.json
       targetFolder: "$(Build.ArtifactStagingDirectory)"

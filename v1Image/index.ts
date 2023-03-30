@@ -6,13 +6,17 @@ import {
   HttpStatusCode,
   sendJsonResponse,
   urlToUint8Array,
-  processImage
+  processImage,
+  rateLimitExceeded
 } from "../utils";
 import { imageQueryParamsValidator } from "./validation";
 
 const functionName = "v1Image";
 
 const httpTrigger: AzureFunction = async function (context: Context): Promise<void> {
+  if (await rateLimitExceeded(context)) {
+    return;
+  }
   if (areEnvironmentVariablesSet() !== true) {
     sendJsonResponse(context, HttpStatusCode.INTERNAL_SERVER_ERROR, {
       error: true,
